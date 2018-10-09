@@ -2,7 +2,7 @@
 
 Here's a small Elm app we made as a group at the October 2018 STL Elm Meetup.
 
-To make, run `npx elm make --output=index.html --debug src/Main.elm` in this folder. If you already have `elm` installed (such as through `brew`, run the same command without `npx`)
+To make, run `npx elm make --output=index.html --debug src/Main.elm` in this folder. If you already have `elm` installed (such as through `brew`), run the same command without `npx`.
 
 ## LICENSE
 
