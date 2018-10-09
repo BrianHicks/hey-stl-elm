@@ -1,9 +1,11 @@
 module Main exposing (..)
 
 import Browser
-import Html exposing (Html)
-import Html.Attributes as Attrs
-import Html.Events as Events
+import Css
+import Html as RootHtml
+import Html.Styled as Html exposing (Html)
+import Html.Styled.Attributes as Attrs exposing (css)
+import Html.Styled.Events as Events
 
 
 -- MODEL
@@ -72,9 +74,14 @@ update msg model =
 -- VIEW
 
 
+theRedBorder =
+    css [ Css.border3 (Css.px 1) Css.solid (Css.hex "F00") ]
+
+
 view : Model -> Html Msg
 view model =
-    Html.main_ []
+    Html.main_
+        [ theRedBorder ]
         [ Html.h1 [] [ Html.text "Please sign my guest book!" ]
         , Html.hr [] []
         , Html.form
@@ -126,5 +133,5 @@ main =
     Browser.sandbox
         { init = init
         , update = update
-        , view = view
+        , view = Html.toUnstyled << view
         }
